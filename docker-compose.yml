@@ -11,6 +11,14 @@ services:
       - 3001:3001
     environment:
       DB_URL: mongodb://db/vidly
+    volumes:
+      - ./backend:/app
+        # - ./$(pwd):/app/node_modules
+        # - /(C:\Data\DCI-WebEntwicklung\assignement\DOCKER\Mosh-Hamedani\vidly\backend):/app
+        # - /app/package*.json
+        # - /app/node_modules
+        # - ./backend:/app/node_modules
+        # - ./backend:/app
   db:
     image: mongo:4.0-xenial
     ports:
