@@ -13,12 +13,8 @@ services:
       DB_URL: mongodb://db/vidly
     volumes:
       - ./backend:/app
-        # - ./$(pwd):/app/node_modules
-        # - /(C:\Data\DCI-WebEntwicklung\assignement\DOCKER\Mosh-Hamedani\vidly\backend):/app
-        # - /app/package*.json
-        # - /app/node_modules
-        # - ./backend:/app/node_modules
-        # - ./backend:/app
+    # command: ./wait-for db:27017 && migrate-mongo up && npm start
+    command: ./docker-entrypoint.sh
   db:
     image: mongo:4.0-xenial
     ports:
