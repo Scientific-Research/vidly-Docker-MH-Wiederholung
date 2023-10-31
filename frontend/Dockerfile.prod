@@ -5,6 +5,7 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 # CMD ["npm", "start"]
+ENV REACT_APP_API_URL=http://95.217.188.16:3001/api
 RUN npm run build
 
 # Step 2: Production
